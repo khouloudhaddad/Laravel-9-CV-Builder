@@ -22,7 +22,7 @@
 
 
 <div class="bg-gray-100">
- <div class="w-full text-white bg-cyan-600">
+ <div class="w-full text-white bg-purple-500 text-white">
         <div x-data="{ open: false }"
             class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
             <div class="p-4 flex flex-row items-center justify-between">
@@ -46,7 +46,7 @@
                 class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open"
-                        class="flex flex-row items-center space-x-2 w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent hover:bg-blue-800 md:w-auto md:inline md:mt-0 md:ml-4 hover:bg-gray-200 focus:bg-blue-800 focus:outline-none focus:shadow-outline">
+                        class="flex flex-row items-center space-x-2 w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent hover:bg-purple-800 md:w-auto md:inline md:mt-0 md:ml-4 hover:bg-gray-200 focus:bg-purple-800 focus:outline-none focus:shadow-white">
                         <span>{{ Auth::user()->name }}</span>
                         <img class="inline h-6 rounded-full"
                             src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-369-456321-512.png">
@@ -64,13 +64,13 @@
                         x-transition:leave-start="transform opacity-100 scale-100"
                         x-transition:leave-end="transform opacity-0 scale-95"
                         class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
-                        <div class="py-2 bg-white text-blue-800 text-sm rounded-sm border border-main-color shadow-sm">
-                            <a class="block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-indigo-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                        <div class="py-2 bg-white text-purple-800 text-sm rounded-sm border border-main-color shadow-sm">
+                            <a class="block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-purple-900 hover:bg-purple-100 focus:bg-purple-200 focus:outline-none focus:shadow-white"
                                 href="#">Settings</a>
-                            <a class="block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-indigo-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                            <a class="block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-purple-900 hover:bg-purple-100 focus:bg-purple-200 focus:outline-none focus:shadow-white"
                                 href="#">Help</a>
                             <div class="border-b"></div>
-                            <a class="block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-gray-900 hover:bg-indigo-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                            <a class="block px-4 py-2 mt-2 text-sm bg-white md:mt-0 focus:text-purple-900 hover:bg-purple-100 focus:bg-purple-200 focus:outline-none focus:shadow-white"
                                 href="#">Logout</a>
                         </div>
                     </div>
@@ -85,14 +85,14 @@
             <!-- Left Side -->
             <div class="w-full md:w-3/12 md:mx-2">
                 <!-- Profile Card -->
-                <div class="bg-white p-3 border-t-4 border-green-400">
+                <div class="bg-white p-3 border-t-4 border-purple-600">
                     <div class="image overflow-hidden">
                         <img class="h-auto w-full mx-auto"
                             src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-369-456321-512.png"
                             alt="">
                     </div>
-                    <h1 class="text-gray-900 font-bold text-l leading-8 my-2">{{ Auth::user()->name }}</h1>
-                    <h3 class="text-gray-600 font-lg text-semibold leading-6">Full Stack PHP Developer</h3>
+                    <h1 class="text-gray-900 font-bold text-l leading-8 mt-2">{{ Auth::user()->name }}</h1>
+                    <h3 class="text-purple-600 font-lg font-semibold leading-6 mb-3">Full Stack PHP Developer</h3>
                     <p class="text-sm text-gray-500 hover:text-gray-600 leading-6">
                         {{ $profile->biographie }}
                     </p>
@@ -100,8 +100,11 @@
                         class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
                         <li class="flex items-center py-3">
                             <span>Status</span>
-                            <span class="ml-auto"><span
-                                    class="bg-green-500 py-1 px-2 rounded text-white text-sm">Active</span></span>
+                            <span class="ml-auto">
+                                <span
+                                    class="bg-purple-500 py-1 px-2
+                                    rounded text-white text-sm">Active</span>
+                                </span>
                         </li>
                         <li class="flex items-center py-3">
                             <span>Member since</span>
@@ -117,6 +120,15 @@
                 <!-- Profile tab -->
                 <!-- About Section -->
                 <div class="bg-white p-3 shadow-sm rounded-sm">
+                    <div class="w-full flex justify-end my-4">
+                        <a href={{ route('profile.links.show') }}
+                        class="px-4 py-2 font-semibold text-sm hover:bg-purple-900 ease-in-out duration-300 bg-purple-500 text-white rounded-full shadow-sm flex align-center w-1/4 justify-center">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+                            </svg>
+                           <span class="ml-2">All Templates</span>
+                        </a>
+                    </div>
                     <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
                         <span clas="text-green-500">
                             <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -153,7 +165,7 @@
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Email.</div>
                                 <div class="px-4 py-2">
-                                    <a class="text-blue-800" href="mailto:{{ Auth::user()->email }}">{{ Auth::user()->email }}</a>
+                                    <a class="text-purple-800" href="mailto:{{ Auth::user()->email }}">{{ Auth::user()->email }}</a>
                                 </div>
                             </div>
                             <div class="grid grid-cols-2">
@@ -163,7 +175,7 @@
                         </div>
                     </div>
                     <button
-                        class="block w-full text-blue-800 text-sm font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4">Show
+                        class="block w-full text-purple-800 text-sm font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4">Show
                         Full Information</button>
                 </div>
                 <!-- End of about section -->
@@ -188,9 +200,9 @@
                             <ul class="list-inside space-y-2">
                                 @foreach ( $profile->experiences()->orderBy('sort')->get() as $experience )
                                 <li>
-                                    <div class="text-teal-600">{{ $experience->jobTitle->name }}</div>
-                                    <div class="text-gray-500 text-xs">{{ $experience->started_at->format('m Y') }} - {{ $experience->finished_at?->format('m Y') }}</div>
-                                    <div class="text-gray-500 text-xs">{{ $experience->company->name }} </div>
+                                    <div class="text-purple-600">{{ $experience->jobTitle->name }}</div>
+                                    <div class="text-gray-500 text-sm">{{ $experience->started_at->format('m Y') }} - {{ $experience->finished_at?->format('m Y') }}</div>
+                                    <div class="text-gray-600 text-xs">{{ $experience->company->name }} </div>
                                 </li>
                                 @endforeach ()
 
@@ -213,11 +225,11 @@
                             </div>
                             <ul class="list-inside space-y-2">
                                 <li>
-                                    <div class="text-teal-600">Masters Degree in Oxford</div>
+                                    <div class="text-purple-600">Masters Degree in Oxford</div>
                                     <div class="text-gray-500 text-xs">March 2020 - Now</div>
                                 </li>
                                 <li>
-                                    <div class="text-teal-600">Bachelors Degreen in LPU</div>
+                                    <div class="text-purple-600">Bachelors Degreen in LPU</div>
                                     <div class="text-gray-500 text-xs">March 2020 - Now</div>
                                 </li>
                             </ul>

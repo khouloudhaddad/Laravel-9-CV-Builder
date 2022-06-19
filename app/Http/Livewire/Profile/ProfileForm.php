@@ -42,11 +42,22 @@ class ProfileForm extends Component implements HasForms
     {
         $this->validate();
 
-        Profile::query()
+        $updated = Profile::query()
             ->whereId($this->profileId)
             ->update([
                 'biographie' => $this->biographie
             ]);
+
+        $updated ?
+        $this->alert(
+            'success',
+            'Experiences were successfully updated',
+        )
+            :
+            $this->alert(
+                'error',
+                'An error occured !',
+            );
     }
     public function render()
     {

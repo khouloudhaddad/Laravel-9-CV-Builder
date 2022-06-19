@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eaa1b6eaceee77b47d0a131693265fc5",
+    "content-hash": "48f48bc19244b40818dd9d22e6bffe93",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -2276,6 +2276,78 @@
                 }
             ],
             "time": "2022-04-07T21:38:12+00:00"
+        },
+        {
+            "name": "mckenziearts/laravel-notify",
+            "version": "v2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mckenziearts/laravel-notify.git",
+                "reference": "a75449fcc1a3e50ac8d1d41a026142461017b4ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mckenziearts/laravel-notify/zipball/a75449fcc1a3e50ac8d1d41a026142461017b4ca",
+                "reference": "a75449fcc1a3e50ac8d1d41a026142461017b4ca",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~7.0|~8.0|~9.0",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Mckenziearts\\Notify\\LaravelNotifyServiceProvider"
+                    ],
+                    "aliases": {
+                        "Notify": "Mckenziearts\\Notify\\Facades\\LaravelNotify"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Mckenziearts\\Notify\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arthur Monney",
+                    "email": "monneylobe@gmail.com",
+                    "homepage": "https://twitter.com/MonneyArthur",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Flexible flash notifications for Laravel",
+            "homepage": "https://github.com/mckenziearts/laravel-notify",
+            "keywords": [
+                "laravel",
+                "laravel-notify",
+                "notification"
+            ],
+            "support": {
+                "issues": "https://github.com/mckenziearts/laravel-notify/issues",
+                "source": "https://github.com/mckenziearts/laravel-notify/tree/v2.3"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/jvquilichini?locale.x=fr_FR",
+                    "type": "custom"
+                }
+            ],
+            "time": "2022-03-30T02:13:10+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -5854,6 +5926,65 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.4"
             },
             "time": "2021-12-08T09:12:39+00:00"
+        },
+        {
+            "name": "tonystore/livewire-notification",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tony98ms/livewire-notification.git",
+                "reference": "5e7878f143a209ffd34198494e2c85f1d904939e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tony98ms/livewire-notification/zipball/5e7878f143a209ffd34198494e2c85f1d904939e",
+                "reference": "5e7878f143a209ffd34198494e2c85f1d904939e",
+                "shasum": ""
+            },
+            "require": {
+                "livewire/livewire": "^2.0",
+                "php": "^7.2.5|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.0"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Tonystore\\LivewireNotification\\LivewireNotificationProvider"
+                    ],
+                    "aliases": {
+                        "LivewireNotification": "Tonystore\\LivewireNotification\\LivewireNotificationFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tonystore\\LivewireNotification\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Medina Sandoval",
+                    "email": "thony918@outlook.com"
+                }
+            ],
+            "description": "Laravel package to launch toast notifications.",
+            "keywords": [
+                "livewire-notification",
+                "livewire-toast",
+                "tonystore"
+            ],
+            "support": {
+                "issues": "https://github.com/tony98ms/livewire-notification/issues",
+                "source": "https://github.com/tony98ms/livewire-notification/tree/1.0.1"
+            },
+            "time": "2022-03-14T00:26:11+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

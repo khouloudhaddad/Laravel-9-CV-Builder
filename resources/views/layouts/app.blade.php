@@ -13,15 +13,21 @@
         <style>[x-cloak] { display: none !important; }</style>
         @livewireStyles
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css" rel="stylesheet" type="text/css" />
 
-        <!-- Scripts -->
-        @livewireScripts
-        <script src="{{ mix('js/app.js') }}" defer></script>
-        @stack('scripts')
+
     </head>
 
     <body class="antialiased">
         @include('layouts.navigation')
         {{ $slot }}
+
+
+         <!-- Scripts -->
+        @livewireScripts
+        <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js">
+        @stack('scripts')
+         <x-livewire-notification::toast />
     </body>
 </html>

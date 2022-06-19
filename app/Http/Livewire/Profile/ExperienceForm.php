@@ -72,9 +72,20 @@ class ExperienceForm extends Component implements HasForms
 
     public function submit()
     {
-        $this->profile->update(
+       $updated = $this->profile->update(
             $this->form->getState()
         );
+        $updated ?
+        $this->alert(
+            'success',
+            'Experiences were successfully updated',
+        )
+        :
+        $this->alert(
+            'error',
+            'An error occured !',
+        )
+        ;
     }
 
 
