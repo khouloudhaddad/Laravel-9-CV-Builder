@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Link;
 use App\Models\User;
 use App\Models\Profile;
 use App\Models\Experience;
@@ -26,6 +27,10 @@ class DatabaseSeeder extends Seeder
        ]);
        Experience::factory(5)->create([
         'profile_id' => $profile->id
+       ]);
+
+       Link::factory(3)->create([
+        'profile_id' =>$profile->id
        ]);
     }
 }

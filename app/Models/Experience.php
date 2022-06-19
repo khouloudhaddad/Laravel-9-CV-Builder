@@ -10,6 +10,13 @@ class Experience extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
+    protected $casts  = [
+        'started_at' => 'date',
+        'finished_at' => 'date'
+    ];
+
     public function profile():BelongsTo
     {
         return $this->belongsTo(Profile::class);

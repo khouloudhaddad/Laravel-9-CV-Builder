@@ -10,6 +10,8 @@ class Link extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function profile():BelongsTo
     {
         return $this->belongsTo(Profile::class);
